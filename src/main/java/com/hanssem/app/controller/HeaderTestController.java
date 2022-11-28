@@ -4,9 +4,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class dealController {
-    @RequestMapping("/deal")
-    public String deal() {
-        return "deal";
+public class HeaderTestController {
+    @RequestMapping("/header")
+    public String header() {
+        return "header";
     }
 }

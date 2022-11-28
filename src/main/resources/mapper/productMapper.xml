@@ -20,6 +20,23 @@
     <select id="select" parameterType="int" resultType="ProductDto">
         SELECT * FROM product WHERE product_number = #{product_number}
     </select>
+<!--    특정 이미지 하나 가져오기    -->
+    <select id="select" parameterType="int" resultType="ProductDto">
+        SELECT * FROM img WHERE product_number = #{product_number}
+    </select>
+    <!--    특정 상품 하나 가져오기 (이미지 포함)   -->
+    <select id="select" parameterType="int" resultType="ProductDto">
+        SELECT  product_name,
+                product_price,
+                product_content,
+                product_status,
+                product_class,
+                category_code_number,
+                image_path
+        FROM product p
+        JOIN image i on p.product_number = i.product_number
+        WHERE p.product_number = #{product_number}
+    </select>
 
 <!--    상품 전체 가져오기 (정렬: 최근 게시물이 위로)    -->
     <select id="selectAll" resultType="ProductDto">

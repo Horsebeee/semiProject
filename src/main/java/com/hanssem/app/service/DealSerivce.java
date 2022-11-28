@@ -1,4 +1,4 @@
 package com.hanssem.app.service;
 
-public class dealSerivce {
+public class DealSerivce {
 }
